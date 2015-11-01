@@ -4,7 +4,7 @@
 # into lists that will then be put into a data frame
 
 
-
+################## IMPORT Statements ###############################
 import pprint
 import pandas as pd
 
@@ -28,7 +28,6 @@ def rawFile_to_pandaDf(raw_file):
     salary_list = []     # holds all the salaries
     choice = 1
 
-#     pprint.pprint(lines)
     for line in lines:
         if (line == ''):  #checks to see if line is empty
             #check to see if first empty
@@ -65,12 +64,6 @@ def rawFile_to_pandaDf(raw_file):
         else: # if the line is not empty, add it to the temp_list
             temp_list.append(line)
             
-#     for i in range(len(position_list)):
-#         if ("Page" or "PAGE" in position_list[i]):
-#            print position_list[i]
-#         else:
-#             pass
-#     pprint.pprint(position_list)
 
     #NEED to convert all the salary in strings to a decimal object!
     #Store as a new array salary_float[]!!
@@ -81,20 +74,10 @@ def rawFile_to_pandaDf(raw_file):
             salary_float.append(float(salary.replace(",",""))) 
         except:     #if you can't convert it to float, it is unpaid leave!
             salary_float.append("")
-#             print "error!"
-#             print salary_list[i]
+
             
-# ########## DEBUGGING #################### 
-#     print len(employee_list)
-#     print len(position_list)
-#     print len(salary_list)
-#     print len(salary_float)
-#     pprint.pprint(employee_list)
-        
+    ############ Create the dataframe & return it! #######################        
     data = zip(employee_list, position_list, salary_list, salary_float)
     df = pd.DataFrame(data, columns=["Employee Name", "Position", "Salary", "Salary_Float"])
     return df
 
-### DEBUGGING 
-# rawFile_to_pandaDf("rawData_txt/sr96.txt")
-# print rawFile_to_pandaDf("rawData_txt/sr14.txt")

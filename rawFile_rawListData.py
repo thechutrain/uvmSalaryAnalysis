@@ -76,9 +76,12 @@ def rawFile_to_rawListData(raw_file):
 
     ###### CREATE A DICTIONARY that contains everything I want to return! ######
     return_dict = {}
-    return_dict[salary_list] = salary_list
-    return_dict[employee_list] = employee_list
-    return_dict[position_list] = position_list
-    return_dict[salary_float] = salary_float
-
+    return_dict["salary_list"] = salary_list
+    return_dict["employee_list"] = employee_list
+    return_dict["position_list"] = position_list
+    return_dict["salary_float"] = salary_float
     return return_dict    
+
+
+#### call function
+# rawFile_to_rawListData("rawData_txt/sr00.txt")

@@ -5,11 +5,8 @@
 
 
 
-################## IMPORT Statements ###############################
 import pprint
 import pandas as pd
-
-
 
 ################### sep_rawFile_to_panda_df() ############################
 def rawFile_to_pandaDf(raw_file):
@@ -31,6 +28,7 @@ def rawFile_to_pandaDf(raw_file):
     salary_list = []     # holds all the salaries
     choice = 1
 
+#     pprint.pprint(lines)
     for line in lines:
         if (line == ''):  #checks to see if line is empty
             #check to see if first empty
@@ -46,12 +44,17 @@ def rawFile_to_pandaDf(raw_file):
                         temp_list = []
                         choice = 2
                     elif (choice == 2):
+                        #may contain page number on the bottom!!!
+#                         print temp_list
+                        test = temp_list[-1]
+                        if (("Page" in test) or ("PAGE" in test)):
+                            temp_list = temp_list[:-1]
                         position_list.extend(temp_list)
                         temp_list = []
                         choice = 3
                     elif (choice == 3):
                         # salary MIGHT have a 'Base Pay in it' so take that out!
-                        if ('BASE PAY' in temp_list[0]):
+                        if (('BASE PAY' in temp_list[0]) or ('Base Pay'in temp_list[0])):  #because other years may have non-capitalized
                             temp_list = temp_list[1:]
                         salary_list.extend(temp_list)
                         temp_list = []
@@ -61,6 +64,13 @@ def rawFile_to_pandaDf(raw_file):
                               
         else: # if the line is not empty, add it to the temp_list
             temp_list.append(line)
+            
+#     for i in range(len(position_list)):
+#         if ("Page" or "PAGE" in position_list[i]):
+#            print position_list[i]
+#         else:
+#             pass
+#     pprint.pprint(position_list)
 
     #NEED to convert all the salary in strings to a decimal object!
     #Store as a new array salary_float[]!!
@@ -74,17 +84,17 @@ def rawFile_to_pandaDf(raw_file):
 #             print "error!"
 #             print salary_list[i]
             
-#         salary = salary_list[i][1:]
-#         float_salary = float(salary.replace(",",""))
-#         salary_list[i] = float_salary
-#         print float_salary
-#         print type(float_salary)
-        
+# ########## DEBUGGING #################### 
+#     print len(employee_list)
+#     print len(position_list)
+#     print len(salary_list)
+#     print len(salary_float)
+#     pprint.pprint(employee_list)
         
     data = zip(employee_list, position_list, salary_list, salary_float)
     df = pd.DataFrame(data, columns=["Employee Name", "Position", "Salary", "Salary_Float"])
     return df
 
-
-# Call the function
-# rawFile_to_pandaDf("rawData_txt/sr03.txt")
+### DEBUGGING 
+# rawFile_to_pandaDf("rawData_txt/sr96.txt")
+# print rawFile_to_pandaDf("rawData_txt/sr14.txt")

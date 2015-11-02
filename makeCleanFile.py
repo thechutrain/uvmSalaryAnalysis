@@ -1,7 +1,6 @@
 ####
 # this will take the raw file names and convert it to a clean version
 
-# import re
 
 def makeCleanFile(raw_file):
 	lines = [line.rstrip('\n') for line in open(raw_file)]
@@ -11,6 +10,7 @@ def makeCleanFile(raw_file):
 	raw_file = raw_file.replace("Data/", "")
 	clean_fileName = clean + raw_file
 	# print clean_fileName
+	directory = "Data/"
 	clean_file = open(clean_fileName, "w")
 
 	#make a list of things I don't want to have in my file
@@ -43,6 +43,7 @@ def makeCleanFile(raw_file):
 			clean_file.write("\n")
 	#close the file
 	clean_file.close()
+	return clean_fileName  # this is the name of the file that was made
 
-
-makeCleanFile("Data/sr06.txt")
+###### CALL FUNCTION / TESTING #####
+# makeCleanFile("Data/sr06.txt")

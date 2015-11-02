@@ -76,12 +76,12 @@ def df_avgSalary_position(year_str, sort_boolean):
     df = pd.DataFrame(data, columns=["Employee_Position", "Average_Salary", "Number_of_Employees"])
     if (sort_boolean):
     	df = df.sort(["Average_Salary"], ascending=False)
-    return df
+    print df
  #    if (sort_boolean):
 	# 	df.sort(["Average Salary"], ascending=False)
 	# return df
         
       
 ####### CALL FUNCTION / TESTING #####################   
-# b = df_avgSalary_position("00", True)
+b = df_avgSalary_position("06", True)
 # print b

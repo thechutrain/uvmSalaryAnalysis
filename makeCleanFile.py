@@ -15,7 +15,7 @@ def makeCleanFile(raw_file):
 
 	#make a list of things I don't want to have in my file
 	junk_str = ["= currently on", "THE UNIVERSITY OF VERMONT LIST OF BASE PAY", "PRIMARY JOB TITLE", "BASE PAY", "on the basis of a number of factors",
-	"Release Date:", "* Base pay is ", "positions; ", "NAME"]
+	"Release Date:", "* Base pay is ", "positions; ", "NAME", "Name", "Base Pay", "Primary Job Title", "University of Vermont", "November"]
 	#Read through each line!!
 	# page = ["P", "a", "g", "e", " "]
 	for line in lines:

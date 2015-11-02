@@ -11,7 +11,7 @@ def makeCleanFile(raw_file):
 	clean_fileName = clean + raw_file
 	# print clean_fileName
 	directory = "Data/"
-	clean_file = open(clean_fileName, "w")
+	clean_file = open(directory + clean_fileName, "w")
 
 	#make a list of things I don't want to have in my file
 	junk_str = ["= currently on", "THE UNIVERSITY OF VERMONT LIST OF BASE PAY", "PRIMARY JOB TITLE", "BASE PAY", "on the basis of a number of factors",

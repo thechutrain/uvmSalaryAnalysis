@@ -20,10 +20,10 @@ def makeRawList(raw_file):
     ############ ADDING makeCleanFile function ##############
     clean_file = makeCleanFile(raw_file) #assumes that the raw_file is in Data/
 
-
+    directory = "Data/"
     # # create a new filename that is clean_filename 
-    lines = [line.rstrip('\n') for line in open(clean_file)]
-    
+    lines = [line.rstrip('\n') for line in open(directory + clean_file)]
+    # lines = [line.rstrip('\n') for line in open(clean_file)]
     ############
     prev_empty = True
     temp_list = []       # temporary list that holds data
@@ -92,5 +92,5 @@ def makeRawList(raw_file):
     # print salary_list[1000]
     # print position_list[1000]
 #### CALLING THE FUNCTION #####
-# d = makeRawList("Data/sr12.txt")
+makeRawList("Data/sr96.txt")
 # pprint.pprint(d)

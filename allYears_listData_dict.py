@@ -12,7 +12,7 @@ def allYears_listData_dict():
 	for i in range(len(list_fileNames)):
 	    name = list_fileNames[i].replace("sr","")
 	    name = name.replace(".txt", "")
-	    # call the rawFile_to_rawListData function here:
+	    # Call function here - makeRawList():
 	    data_dict = makeRawList(file_dir + list_fileNames[i])
 
 	    ### ADD CODE HERE

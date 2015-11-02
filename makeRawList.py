@@ -18,6 +18,7 @@ def makeRawList(raw_file):
         pass
 
     ############ ADDING makeCleanFile function ##############
+    # Call function that will clean the raw_file with junk in it
     clean_file = makeCleanFile(raw_file) #assumes that the raw_file is in Data/
 
     directory = "Data/"

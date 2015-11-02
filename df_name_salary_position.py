@@ -12,7 +12,35 @@ def df_name_salary_position(year_str, sort_boolean):
     index_hits = []
     salary_float = data[year_str]["salary_float"]
     position_list = data[year_str]["position_list"]
-    employee_list = data[year_str]["employee_list"] 
+    employee_list = data[year_str]["employee_list"]
+    ########## DEBUGGING ######
+    # "06"
+    # Debugging .... there is no Carr,Frances!!!!
+  #   for i in range(len(employee_list)):
+		# if ("Carr" in employee_list[i]):
+		# 	print employee_list[i]
+	# Fixed Yields:
+			# Carr,Elizabeth Anne
+			# Carr,Frances Eileen
+			# Carr,Jacqueline B.
+			# Carr,Jeanine M.
+			# Devoid,Rick Carroll
+			# Honeman,Carrie Ann
+	# Previous yielded this below:
+			# Carr,Elizabeth Anne
+			# Carr,Jeanine M.
+			# Carrard,Philippe
+			# Carrigan,Linda Jean
+			# Carris,Marschelle R.
+			# Carroll Higgins,Linda Joan
+			# Carroll,John A.
+			# Clough,Carrie Mae
+			# Honeman,Carrie Ann
+			# Lewin,Carroll
+			# MISSING PEOPLE:
+			 # 'Carr,Frances Eileen',
+			 # 'Carr,Jacqueline B.',
+
     ## DEBUGGING:
     # print len(salary_float)
     # print len(position_list)
@@ -25,10 +53,12 @@ def df_name_salary_position(year_str, sort_boolean):
     # 	print salary_float[index]
     # 	print position_list[index]
 
-    #these will be the copies of the original lists, but without upl employees
+
+#     #these will be the copies of the original lists, but without upl employees
     e_list = []
     p_list = []
     s_float = []
+    index_hits = []
     
     ## Take care of the UPL salary option ###
     for i in range(len(salary_float)):
@@ -54,14 +84,12 @@ def df_name_salary_position(year_str, sort_boolean):
     	df = df.sort(["Salary"], ascending=False)
     return df
     
-        
-
-
+       
  #### CALL FUNCTION / TESTING #####
  ## if dataframe:
-a = df_name_salary_position("00", True)
-print (a.describe())
+# a = df_name_salary_position("00", True)
+# print (a.describe())
 # print a
 
 ### No dataframe
-# df_name_salary_position("00", True)
+# df_name_salary_position("06", True)

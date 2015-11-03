@@ -69,7 +69,7 @@ def makeRawList(raw_file):
             salary = salary_list[i][1:]
             salary_float.append(float(salary.replace(",",""))) 
         except:     #if you can't convert it to float, it is unpaid leave!
-            salary_float.append(0)
+            salary_float.append("") # save it as an empty space
 
 #     ###### CREATE A DICTIONARY that contains everything I want to return! ######
     return_dict = {}
@@ -93,5 +93,13 @@ def makeRawList(raw_file):
     # print salary_list[1000]
     # print position_list[1000]
 #### CALLING THE FUNCTION #####
-makeRawList("Data/sr96.txt")
+# a = makeRawList("Data/sr98.txt")
+# print a["salary_list"][-1]
+# print a["employee_list"][-1]
+# print a["position_list"][-1]
+
+# print len(a["salary_list"])
+# print len(a["salary_float"])
+# print len(a["employee_list"])
+# print len(a["position_list"])
 # pprint.pprint(d)

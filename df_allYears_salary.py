@@ -12,7 +12,7 @@ pd.options.display.mpl_style = 'default'
 
 
 ### This will call a function that returns a dataframe for each year
-def boxplot_salary_allYears(master_dict):
+def df_allYears_salary(master_dict):
     #code
     years = ["96", "97", "98", "99", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14"] 
     for i in range(len(years)):
@@ -40,6 +40,6 @@ def boxplot_salary_allYears(master_dict):
 
 ###### Call the function ######            
 # master = allYears_listData_dict()
-# df = boxplot_salary_allYears(master)
+# df = df_allYears_salary(master)
 # pprint.pprint(df)
     

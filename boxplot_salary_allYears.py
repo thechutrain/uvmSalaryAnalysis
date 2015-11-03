@@ -22,7 +22,7 @@ def boxplot_salary_allYears():
     plt.ylabel('Salary (USD)')
     plt.xlabel("School Year")
     plt.title("Distribution of UVM employee salary from 1996 - 2014")
-    plt.show(block=True)
+    plt.show(block=True)  # this is code is needed if run outside of canopy
 
 ###### call function / testing
-# boxplot_salary_allYears()
+boxplot_salary_allYears()

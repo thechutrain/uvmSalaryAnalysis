@@ -13,6 +13,14 @@ def df_name_salary_position(year_str, sort_boolean):
     salary_float = data[year_str]["salary_float"]
     position_list = data[year_str]["position_list"]
     employee_list = data[year_str]["employee_list"]
+
+    ########### DEBUGGING ############
+    if ((len(salary_float) == len(position_list)) and len(position_list) == len(employee_list)):
+    	print "all incoming lists are the same length"
+    else:
+    	print len(salary_float)
+    	print len(position_list)
+    	print len(employee_list)
     ########## DEBUGGING ######
     # "06"
     # Debugging .... there is no Carr,Frances!!!!
@@ -73,9 +81,22 @@ def df_name_salary_position(year_str, sort_boolean):
         if (j in index_hits):
             pass
         else:
-            e_list.append(employee_list[j])
-            p_list.append(position_list[j])
-            s_float.append(salary_float[j])
+        	# Original code #########
+            # e_list.append(employee_list[j])
+            # p_list.append(position_list[j])
+            # s_float.append(salary_float[j])
+            ##########################
+            try:
+	            e_list.append(employee_list[j])
+	            p_list.append(position_list[j])
+	            s_float.append(salary_float[j])
+            except:
+            	print j
+
+
+
+
+
 #     # Create a dataframe!!      
     # data = zip(e_list, p_list, s_float)
     data = zip(employee_list, position_list, salary_float)
@@ -87,7 +108,7 @@ def df_name_salary_position(year_str, sort_boolean):
        
  #### CALL FUNCTION / TESTING #####
  ## if dataframe:
-# a = df_name_salary_position("00", True)
+a = df_name_salary_position("14", True)
 # print (a.describe())
 # print a
 

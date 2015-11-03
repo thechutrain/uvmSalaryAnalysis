@@ -82,6 +82,6 @@ def df_avgSalary_position(year_str, sort_boolean):
 	# return df
         
       
-####### CALL FUNCTION / TESTING #####################   
-# b = df_avgSalary_position("06", True)
+# ###### CALL FUNCTION / TESTING #####################   
+# b = df_avgSalary_position("14", True)
 # print b

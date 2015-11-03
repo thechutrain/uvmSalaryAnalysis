@@ -24,4 +24,5 @@ def boxplot_salary_allYears():
     plt.title("Distribution of UVM employee salary from 1996 - 2014")
     plt.show(block=True)
 
-boxplot_salary_allYears()
+###### call function / testing
+# boxplot_salary_allYears()

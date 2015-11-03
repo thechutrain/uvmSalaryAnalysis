@@ -13,7 +13,8 @@ Project Outline:
 </strike>
 
 #Part I: Data Cleaning & Processing
-includes step 1.) and 2.)
-3.) allYears_listData_dict() --> no arguments needed, returns a dictionary of all the Data from the "sr##.pdf" files
-	* it calls the function: makeRawList("rawfile") --> returns a dictionary containing the list data on employee, position, salary for a specific year
-	* makeRawList --> calls makeCleanFile("filename") --> which makes a "clean_sr##.txt" and returns the name of the cleanfile
+includes step 1 & 2
+3.) <b> allYears_listData_dict() </b> : important function that returns the master dictionary that stores all the data. The keys are strings of the last two numbers of the year (ex. "01") and the value is a dictionary of lists (ex. {"salary_list": salary_list, "emloyee_list": employee_list, "position_list": position_list, "salary_float": salary_float}) 
+
+<b> allYears_listData_dict() </b> within its for loop, calls the function <b> makeRawList("rawfile") </b> which returns a dictionary of the lists of data
+ 

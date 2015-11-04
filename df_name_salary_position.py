@@ -11,10 +11,12 @@ def df_name_salary_position(year_str, sort_boolean):
     #describes the hits of the unpaid leave employees
     index_hits = []
     salary_float = data[year_str]["salary_float"]
+    salary_list = data[year_str]["salary_list"]
     position_list = data[year_str]["position_list"]
     employee_list = data[year_str]["employee_list"]
 
     ########### DEBUGGING ############
+
     if ((len(salary_float) == len(position_list)) and len(position_list) == len(employee_list)):
     	print "all incoming lists are the same length"
     else:
@@ -66,6 +68,7 @@ def df_name_salary_position(year_str, sort_boolean):
     e_list = []
     p_list = []
     s_float = []
+    s_list = []
     index_hits = []
     
     ## Take care of the UPL salary option ###
@@ -87,9 +90,10 @@ def df_name_salary_position(year_str, sort_boolean):
             # s_float.append(salary_float[j])
             ##########################
             try:
-	            e_list.append(employee_list[j])
-	            p_list.append(position_list[j])
-	            s_float.append(salary_float[j])
+                e_list.append(employee_list[j])
+	        p_list.append(position_list[j])
+                s_list.append(salary_list[j])
+	        s_float.append(salary_float[j])
             except:
             	print j
 
@@ -103,12 +107,14 @@ def df_name_salary_position(year_str, sort_boolean):
     df = pd.DataFrame(data, columns=["Name", "Position", "Salary"])
     if (sort_boolean):
     	df = df.sort(["Salary"], ascending=False)
+
     return df
     
        
  #### CALL FUNCTION / TESTING #####
  ## if dataframe:
-a = df_name_salary_position("14", True)
+# a = df_name_salary_position("14", True)
+
 # print (a.describe())
 # print a
 

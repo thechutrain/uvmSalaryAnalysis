@@ -73,6 +73,6 @@ def get_outliers(year_str, master_dict):
     return df
     
 #CALL THE FUNCTION/ Testing
-# a = get_outliers("14", master)
-# print a
+a = get_outliers("14", master)
+# a.to_csv(path_or_buf="outliers_data_14.csv") # makes a csv file of the data!!
     
